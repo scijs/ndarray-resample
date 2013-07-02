@@ -9,20 +9,28 @@ var clampScale = cwise({
   args:["array", "array", "scalar", "scalar", "scalar"],
   body: function clampScale(out, inp, s, l, h) {
     var x = inp * s
-    if(x < 0) { x = 0 }
-    if(x > 255) { x = 255 }
+    if(x < l) { x = l }
+    if(x > h) { x = h }
     out = x
   }
 })
 
 
-function downsample2x(out, inp) {
+function downsample2x(out, inp, clamp_lo, clamp_hi) {
+  if(typeof clamp_lo === "undefined") {
+    clamp_lo = -Infinity
+  }
+  if(typeof clamp_hi === "undefined") {
+    clamp_hi = Infinity
+  }
+  
   var ishp = inp.shape
   var oshp = out.shape
   
   if(out.size === 1) {
     var v = ops.sum(inp)/inp.size
-    if(v > 255) { v = 255 }
+    if(v < clamp_lo) { v = clamp_lo }
+    if(v > clamp_hi) { v = clamp_hi }
     out.set(0,0,v)
     return
   }
@@ -65,7 +73,7 @@ function downsample2x(out, inp) {
   }
   
   fft(-1, s, t)
-  clampScale(out, s, 1.0/(1<<d))
+  clampScale(out, s, 1.0/(1<<d), clamp_lo, clamp_hi)
   
   pool.free(x)
   pool.free(y)
