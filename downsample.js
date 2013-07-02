@@ -4,10 +4,6 @@ var fft = require("ndarray-fft")
 var pool = require("ndarray-scratch")
 var ops = require("ndarray-ops")
 
-var unpack = require("ndarray-unpack")
-var savePixels = require("save-pixels")
-var fs = require("fs")
-
 function downsample2x(out, inp) {
   var ishp = inp.shape
   var oshp = out.shape

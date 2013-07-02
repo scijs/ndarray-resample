@@ -1,0 +1,44 @@
+{
+  "name": "ndarray-downsample2x",
+  "version": "0.0.0",
+  "description": "Downsample by a factor of two using sinc interpolation",
+  "main": "downsample.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "ndarray-ops": "~1.1.0",
+    "ndarray-fft": "~0.1.0",
+    "ndarray-scratch": "~0.0.1"
+  },
+  "devDependencies": {
+    "lena": "~1.0.0",
+    "luminance": "~1.0.0",
+    "ndarray-unpack": "~0.0.0",
+    "save-pixels": "~0.2.0",
+    "zeros": "~0.0.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/ndarray-downsample2x.git"
+  },
+  "keywords": [
+    "downsample",
+    "ndarray",
+    "power",
+    "of",
+    "two",
+    "sinc",
+    "interpolation"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "5018571a31388da17be61d3a026df4ac0b2d179d",
+  "bugs": {
+    "url": "https://github.com/mikolalysenko/ndarray-downsample2x/issues"
+  }
+}
