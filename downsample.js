@@ -22,9 +22,6 @@ function downsample2x(out, inp) {
   var s = pool.malloc(oshp)
     , t = pool.malloc(oshp)
   
-  ops.assigns(s, 0.0)
-  ops.assigns(t, 0.0)
-  
   var nr = new Array(d)
     , a = new Array(d)
     , b = new Array(d)

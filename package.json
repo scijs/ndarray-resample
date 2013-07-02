@@ -1,6 +1,6 @@
 {
   "name": "ndarray-downsample2x",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Downsample by a factor of two using sinc interpolation",
   "main": "downsample.js",
   "directories": {
