@@ -3,10 +3,30 @@
 var fft = require("ndarray-fft")
 var pool = require("ndarray-scratch")
 var ops = require("ndarray-ops")
+var cwise = require("cwise")
+
+var clampScale = cwise({
+  args:["array", "array", "scalar", "scalar", "scalar"],
+  body: function clampScale(out, inp, s, l, h) {
+    var x = inp * s
+    if(x < 0) { x = 0 }
+    if(x > 255) { x = 255 }
+    out = x
+  }
+})
+
 
 function downsample2x(out, inp) {
   var ishp = inp.shape
   var oshp = out.shape
+  
+  if(out.size === 1) {
+    var v = ops.sum(inp)/inp.size
+    if(v > 255) { v = 255 }
+    out.set(0,0,v)
+    return
+  }
+  
   var d = ishp.length
   var x = pool.malloc(ishp)
     , y = pool.malloc(ishp)
@@ -29,6 +49,9 @@ function downsample2x(out, inp) {
     for(var j=0; j<d; ++j) {
       if(i&(1<<j)) {
         nr[j] = oshp[j] - (oshp[j]>>1)
+        if(nr[j] === 0) {
+          continue
+        }
         a[j] = oshp[j] - nr[j]
         b[j] = ishp[j] - nr[j]
       } else {
@@ -42,7 +65,7 @@ function downsample2x(out, inp) {
   }
   
   fft(-1, s, t)
-  ops.muls(out, s, 1.0/(1<<d))
+  clampScale(out, s, 1.0/(1<<d))
   
   pool.free(x)
   pool.free(y)
