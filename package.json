@@ -9,7 +9,8 @@
   "dependencies": {
     "ndarray-ops": "~1.1.0",
     "ndarray-fft": "~0.1.0",
-    "ndarray-scratch": "~0.0.1"
+    "ndarray-scratch": "~0.0.1",
+    "cwise": "~0.3.3"
   },
   "devDependencies": {
     "lena": "~1.0.0",
