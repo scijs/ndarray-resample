@@ -1,30 +1,36 @@
 {
   "name": "ndarray-downsample2x",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Downsample by a factor of two using sinc interpolation",
   "main": "downsample.js",
   "directories": {
     "example": "example"
   },
+  "browserify": {
+    "transform": ["cwise"]
+  },
   "dependencies": {
-    "ndarray-ops": "~1.1.0",
-    "ndarray-fft": "~0.1.0",
-    "ndarray-scratch": "~0.0.1",
-    "cwise": "~0.3.3"
+    "ndarray-ops": "^1.2.2",
+    "ndarray-fft": "^1.0.0",
+    "ndarray-scratch": "^1.1.1",
+    "cwise": "^1.0.7"
   },
   "devDependencies": {
-    "lena": "~1.0.0",
-    "luminance": "~1.0.0",
-    "ndarray-unpack": "~0.0.0",
-    "save-pixels": "~0.2.0",
-    "zeros": "~0.0.0"
+    "ndarray": "^1.0.18",
+    "baboon-image": "^2.0.0",
+    "luminance": "^1.0.3",
+    "ndarray-unpack": "^1.0.0",
+    "save-pixels": "^2.2.0",
+    "zeros": "^1.0.0",
+    "tape": "^4.0.0",
+    "test-fuzzy-array": "^1.0.1"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mikolalysenko/ndarray-downsample2x.git"
+    "url": "git://github.com/scijs/ndarray-downsample2x.git"
   },
   "keywords": [
     "downsample",
@@ -40,6 +46,6 @@
   "readmeFilename": "README.md",
   "gitHead": "5018571a31388da17be61d3a026df4ac0b2d179d",
   "bugs": {
-    "url": "https://github.com/mikolalysenko/ndarray-downsample2x/issues"
+    "url": "https://github.com/scijs/ndarray-downsample2x/issues"
   }
 }
