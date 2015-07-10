@@ -2,7 +2,7 @@
   "name": "ndarray-resample",
   "version": "1.0.0",
   "description": "Resample using sinc kernels",
-  "main": "downsample.js",
+  "main": "resample.js",
   "directories": {
     "example": "example"
   },

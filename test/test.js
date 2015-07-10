@@ -1,4 +1,4 @@
-var resample = require("../downsample.js")
+var resample = require("../resample.js")
 var ndarray = require("ndarray")
 var fuzz = require("test-fuzzy-array")
 

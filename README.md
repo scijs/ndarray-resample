@@ -24,8 +24,8 @@ Install using [npm](https://www.npmjs.com/):
 #### `require("ndarray-resample")(output, input[, clamp_lo, clamp_hi])`
 Resamples input by a factor of `output.shape/input.shape`, storing the result in output (this also means the factor can differ per dimension).
 
-* `output` gets the result of downsampling
-* `input` is the array that gets downsampled
+* `output` gets the result of resampling
+* `input` is the array that gets resampled
 * `clamp_lo` is a threshold placed on the pixeks
 * `clamp_hi` is an upper threhsold placed on the pixels
 
