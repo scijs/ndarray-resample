@@ -1,7 +1,7 @@
 {
-  "name": "ndarray-downsample2x",
+  "name": "ndarray-resample",
   "version": "1.0.0",
-  "description": "Downsample by a factor of two using sinc interpolation",
+  "description": "Resample using sinc kernels",
   "main": "downsample.js",
   "directories": {
     "example": "example"
@@ -30,22 +30,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/scijs/ndarray-downsample2x.git"
+    "url": "git://github.com/scijs/ndarray-resample.git"
   },
   "keywords": [
+    "scijs",
     "downsample",
+    "upsample",
+    "resample",
     "ndarray",
-    "power",
-    "of",
-    "two",
     "sinc",
     "interpolation"
   ],
   "author": "Mikola Lysenko",
+  "contributors": [
+    "Jasper van de Gronde <th.v.d.gronde@hccnet.nl>"
+  ],
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "5018571a31388da17be61d3a026df4ac0b2d179d",
   "bugs": {
-    "url": "https://github.com/scijs/ndarray-downsample2x/issues"
+    "url": "https://github.com/scijs/ndarray-resample/issues"
   }
 }

@@ -1,6 +1,6 @@
-ndarray-downsample2x
-====================
-Downsamples an ndarray by a factor of 2 using sinc interpolation.
+ndarray-resample
+================
+Resamples an ndarray by an arbitrary (rational) factor using a sinc kernel.
 
 ## Example
 Here is a simple example showing how to downsample an image:
@@ -8,7 +8,7 @@ Here is a simple example showing how to downsample an image:
 ```javascript
 var baboon = require("luminance")(require("baboon-image"))
 var x = require("zeros")([256,256])
-require("../downsample.js")(x, baboon)
+require("ndarray-resample")(x, baboon)
 require("save-pixels")(x, "png").pipe(process.stdout)
 ```
 
@@ -18,18 +18,18 @@ require("save-pixels")(x, "png").pipe(process.stdout)
 ##Install
 Install using [npm](https://www.npmjs.com/):
 
-    npm install ndarray-downsample2x
+    npm install ndarray-resample
 
-## API    
-#### `require("ndarray-downsample2x")(output, input[, clamp_lo, clamp_hi])`
-Downsamples input by a factor of two storing the result in output.
+## API
+#### `require("ndarray-resample")(output, input[, clamp_lo, clamp_hi])`
+Resamples input by a factor of `output.shape/input.shape`, storing the result in output (this also means the factor can differ per dimension).
 
 * `output` gets the result of downsampling
 * `input` is the array that gets downsampled
 * `clamp_lo` is a threshold placed on the pixeks
 * `clamp_hi` is an upper threhsold placed on the pixels
 
-**Note** `input`'s shape must be divisible by 4 and `output`'s shape must be one half of `input`'s along each dimension.
+**Note** that the pixel at the "origin" in the output corresponds to the pixel at the origin in the input. Also, the boundary conditions are periodic (for now).
 
 ## License
-(c) 2013 Mikola Lysenko. MIT License
+(c) 2013-2015 Mikola Lysenko, Jasper van de Gronde. MIT License
