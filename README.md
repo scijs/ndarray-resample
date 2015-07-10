@@ -2,6 +2,8 @@ ndarray-resample
 ================
 Resamples an ndarray by an arbitrary (rational) factor using a sinc kernel.
 
+[![build status](https://secure.travis-ci.org/scijs/ndarray-resample.png)](http://travis-ci.org/scijs/ndarray-resample)
+
 ## Example
 Here is a simple example showing how to downsample an image:
 
