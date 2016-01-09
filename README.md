@@ -28,7 +28,7 @@ Resamples input by a factor of `output.shape/input.shape`, storing the result in
 
 * `output` gets the result of resampling
 * `input` is the array that gets resampled
-* `clamp_lo` is a threshold placed on the pixeks
+* `clamp_lo` is a threshold placed on the pixels
 * `clamp_hi` is an upper threhsold placed on the pixels
 
 **Note** that the pixel at the "origin" in the output corresponds to the pixel at the origin in the input. Also, the boundary conditions are periodic (for now).
